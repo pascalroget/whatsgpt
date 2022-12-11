@@ -44,7 +44,8 @@ npm install
 1. Go to [https://chat.openai.com/chat](https://chat.openai.com/chat) and log in or sign up.
 2. Open dev tools
 3. Open Application > Cookies
-   <img src="https://raw.githubusercontent.com/transitive-bullshit/chatgpt-api/HEAD/media/session-token.png" width="500" />
+
+<img src="https://raw.githubusercontent.com/transitive-bullshit/chatgpt-api/HEAD/media/session-token.png" width="500" />
 
 ## Find your local path to Chrome
 
