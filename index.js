@@ -50,8 +50,11 @@ async function main() {
 
       console.log(`Message: ${message.body}`);
 
-      // Do we already have a conversation for this sender?
-      if (conversations[message._data.id.remote] === undefined) {
+      // Do we already have a conversation for this sender, or is the user resetting this conversation?
+      if (
+        conversations[message._data.id.remote] === undefined ||
+        message.body === "reset"
+      ) {
         console.log(`Creating new conversation for ${message._data.id.remote}`);
         conversations[message._data.id.remote] =
           await chatgpt.getConversation();
