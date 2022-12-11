@@ -70,8 +70,4 @@ npm start
 
 <img width="350" src="https://user-images.githubusercontent.com/18585190/206880812-52a6b414-377c-437e-a9ea-52df39795f6b.jpg" />
 
-
 ## Done :)
-
-<img width="350" src="https://user-images.githubusercontent.com/18585190/206881007-e325e9b8-edb2-43ae-bcb6-8d62d3a17ee6.jpg" />
-
