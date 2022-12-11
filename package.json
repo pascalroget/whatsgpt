@@ -1,0 +1,35 @@
+{
+  "name": "whatsgpt",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot for ChatGPT for personal or family use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pascalroget/whatsgpt.git"
+  },
+  "keywords": [
+    "chatgpt",
+    "whatsapp",
+    "chatbot",
+    "personal",
+    "assistant",
+    "assistant"
+  ],
+  "author": "Pascal Roget",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pascalroget/whatsgpt/issues"
+  },
+  "homepage": "https://github.com/pascalroget/whatsgpt#readme",
+  "dependencies": {
+    "chatgpt": "^2.0.5",
+    "dotenv": "^16.0.3",
+    "puppeteer": "^19.4.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.0.3"
+  }
+}
