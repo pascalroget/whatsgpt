@@ -8,7 +8,7 @@ Now, you can use it too.
 
 It's experimental and relies on the preview release of OpenAI's ChatGPT.
 
-<img width="200" src="https://user-images.githubusercontent.com/18585190/206880862-7bdb74d1-728e-4177-a5c1-e7e7243777b6.jpg" />
+<img width="350" src="https://user-images.githubusercontent.com/18585190/206880862-7bdb74d1-728e-4177-a5c1-e7e7243777b6.jpg" />
 
 ## Thanks to
 
@@ -65,9 +65,9 @@ npm start
 
 ## Scan the barcode with your WhatsApp app:
 
-<img width="200" src="https://user-images.githubusercontent.com/18585190/206880813-622c104f-d938-45d2-944d-9e0a7abeedab.jpg" />
+<img width="350" src="https://user-images.githubusercontent.com/18585190/206880813-622c104f-d938-45d2-944d-9e0a7abeedab.jpg" />
 
-<img width="200" src="https://user-images.githubusercontent.com/18585190/206880812-52a6b414-377c-437e-a9ea-52df39795f6b.jpg" />
+<img width="350" src="https://user-images.githubusercontent.com/18585190/206880812-52a6b414-377c-437e-a9ea-52df39795f6b.jpg" />
 
 
 ## Done :)
