@@ -18,7 +18,7 @@ It's experimental and relies on the preview release of OpenAI's ChatGPT.
 
 # Requirements
 
-- A dedicated number that can receive text messages/voice calls, linked to its own WhatsApp instance.
+- A phone number that can receive text messages/voice calls, linked to its own WhatsApp instance.
 - I use a Google Voice number, and run a 2nd instance of WhatsApp on my phone by using the [WhatsApp for Business app](https://business.whatsapp.com/) (it's free!])
 - A recent version of NodeJS
 - A computer that can run Chrome (headless is OK)
