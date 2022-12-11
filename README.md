@@ -71,3 +71,12 @@ npm start
 <img width="350" src="https://user-images.githubusercontent.com/18585190/206880812-52a6b414-377c-437e-a9ea-52df39795f6b.jpg" />
 
 ## Done :)
+
+# Use it
+
+Open a chat with the WhatsApp account linked to the number you just linked to this bot. ChatGPT will answer. This works for several users at the same time and each conversation is separate.
+Additionally, you can reset an ongoing conversation by sending this message:
+
+```console
+reset
+```
