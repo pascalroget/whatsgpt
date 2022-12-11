@@ -56,8 +56,11 @@ async function main() {
         message.body === "reset"
       ) {
         console.log(`Creating new conversation for ${message._data.id.remote}`);
-        conversations[message._data.id.remote] =
-          await chatgpt.getConversation();
+        if (message.body === "reset") {
+          message.reply("Conversation reset");
+          return;
+        }
+        conversations[message._data.id.remote] = chatgpt.getConversation();
       }
 
       const response = await conversations[message._data.id.remote].sendMessage(
