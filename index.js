@@ -38,7 +38,7 @@ whatsapp.on("ready", () => {
 async function main() {
   const { ChatGPTAPI } = await import("chatgpt");
 
-  const chatgpt = new ChatGPTAPI({ sessionToken: process.env.SESSION_TOKEN });
+  const chatgpt = new ChatGPTAPI({ sessionToken: process.env.SESSION_TOKEN, clearanceToken: process.env.CLEARANCE_TOKEN });
 
   await chatgpt.ensureAuth();
 

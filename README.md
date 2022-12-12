@@ -55,6 +55,7 @@ Create a .env file with the following two variables. In this example, we are usi
 
 ```console
 SESSION_TOKEN=[Your session token]
+CLEARANCE_TOKEN=[Your clearance token obtained from the cookies]
 CHROME_PATH=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 ```
 
