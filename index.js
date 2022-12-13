@@ -60,6 +60,15 @@ async function main() {
 
       console.log(`Message: ${message.body}`);
 
+      // If added to a chatgroup, only respond if tagged
+      const chat = await message.getChat();
+
+      if (
+        chat.isGroup &&
+        !message.mentionedIds.includes(whatsapp.info.wid._serialized)
+      )
+        return;
+
       // Do we already have a conversation for this sender, or is the user resetting this conversation?
       if (
         conversations[message._data.id.remote] === undefined ||
