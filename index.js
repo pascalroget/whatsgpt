@@ -9,16 +9,18 @@ See documentation for help
 */
 import { ChatGPTAPI, getOpenAIAuth } from "chatgpt";
 import whatsappweb from "whatsapp-web.js";
+
+const { Client, LocalAuth } = whatsappweb;
 import qrcode from "qrcode-terminal";
-import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import * as dotenv from "dotenv";
 dotenv.config();
 
 // Create whatsapp client instance
-const whatsapp = new whatsappweb.Client({
+const whatsapp = new Client({
   puppeteer: {
     executablePath: process.env.CHROME_PATH,
   },
-  // authStrategy: new LocalAuth(),
+  authStrategy: new LocalAuth(),
 });
 
 console.log(process.env.CHROME_PATH);
