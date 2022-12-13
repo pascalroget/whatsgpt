@@ -46,7 +46,6 @@ npm install
 Create a .env file with the following variables. In this example, we are using Chrome on OSX.
 
 ```console
-SESSION_TOKEN=[Your session token]
 CHROME_PATH=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 EMAIL=[Your email used to register with OpenAI]
 PASSWORD=[Your password used to register with OpenAI]
