@@ -2,7 +2,8 @@
 
 WhatsGPT is a wrapper for [ChatGPT](https://openai.com/blog/chatgpt/) for personal or family use, that runs inside your own WhatsApp bot.
 
-**It can keep track of several distinct conversations with different users, so your entire family (and friends) can use it**
+- Can keep track of multiple separate conversations
+- Can be added to groups, and will respond to messages starting with @[its number or name]
 
 My family and I find ChatGPT very useful want we want to use it on the go and I was bored on a Saturday morning, so here we are.
 
