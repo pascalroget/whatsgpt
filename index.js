@@ -1,8 +1,9 @@
 /*
 Do not forget to create a .env file with the following two variables set:
 
-SESSION_TOKEN=
 CHROME_PATH=
+EMAIL=
+PASSWORD=
 
 See documentation for help
 */
