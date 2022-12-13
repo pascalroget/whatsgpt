@@ -20,8 +20,8 @@ It's experimental and relies on the preview release of OpenAI's ChatGPT.
 
 - A phone number that can receive text messages/voice calls, linked to its own WhatsApp instance.
 - I use a Google Voice number, and run a 2nd instance of WhatsApp on my phone by using the [WhatsApp for Business app](https://business.whatsapp.com/) (it's free!])
-- A recent version of NodeJS
-- A computer that can run Chrome (headless is OK)
+- Node JS >= 18
+- A computer that can run Chrome (headless is now broken as OpenAI is using CloudFlare)
 
 # Installation
 
@@ -39,24 +39,17 @@ Install dependencies:
 npm install
 ```
 
-## Obtain your session token from ChatGPT:
-
-1. Go to [https://chat.openai.com/chat](https://chat.openai.com/chat) and log in or sign up.
-2. Open dev tools
-3. Open Application > Cookies
-
-<img src="https://raw.githubusercontent.com/transitive-bullshit/chatgpt-api/HEAD/media/session-token.png" width="500" />
-
 ## Find your local path to Chrome
 
 ## Configure it
 
-Create a .env file with the following two variables. In this example, we are using Chrome on OSX.
+Create a .env file with the following variables. In this example, we are using Chrome on OSX.
 
 ```console
 SESSION_TOKEN=[Your session token]
-CLEARANCE_TOKEN=[Your clearance token obtained from the cookies]
 CHROME_PATH=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+EMAIL=[Your email used to register with OpenAI]
+PASSWORD=[Your password used to register with OpenAI]
 ```
 
 ## Run it
@@ -72,6 +65,10 @@ npm start
 <img width="350" src="https://user-images.githubusercontent.com/18585190/206880812-52a6b414-377c-437e-a9ea-52df39795f6b.jpg" />
 
 ## Done :)
+
+# Issues
+
+Authentication with ChatGPT is a fluid situation. As of this writing, the chatgpt npm package now tries to login with a headfull browser to obtain and then refresh cookies.
 
 # Use it
 

@@ -6,17 +6,21 @@ CHROME_PATH=
 
 See documentation for help
 */
-const qrcode = require("qrcode-terminal");
-const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
-require("dotenv").config();
+import { ChatGPTAPI, getOpenAIAuth } from "chatgpt";
+import whatsappweb from "whatsapp-web.js";
+import qrcode from "qrcode-terminal";
+import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
 
 // Create whatsapp client instance
-const whatsapp = new Client({
+const whatsapp = new whatsappweb.Client({
   puppeteer: {
     executablePath: process.env.CHROME_PATH,
   },
-  authStrategy: new LocalAuth(),
+  // authStrategy: new LocalAuth(),
 });
+
+console.log(process.env.CHROME_PATH);
 
 // Initialize conversation storage
 const conversations = {};
@@ -36,9 +40,14 @@ whatsapp.on("ready", () => {
 });
 
 async function main() {
-  const { ChatGPTAPI } = await import("chatgpt");
+  const openAIAuth = await getOpenAIAuth({
+    email: process.env.EMAIL,
+    password: process.env.PASSWORD,
+  });
 
-  const chatgpt = new ChatGPTAPI({ sessionToken: process.env.SESSION_TOKEN, clearanceToken: process.env.CLEARANCE_TOKEN });
+  const chatgpt = new ChatGPTAPI({
+    ...openAIAuth,
+  });
 
   await chatgpt.ensureAuth();
 

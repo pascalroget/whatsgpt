@@ -21,12 +21,13 @@
   ],
   "author": "Pascal Roget",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/pascalroget/whatsgpt/issues"
   },
   "homepage": "https://github.com/pascalroget/whatsgpt#readme",
   "dependencies": {
-    "chatgpt": "^2.0.5",
+    "chatgpt": "latest",
     "dotenv": "^16.0.3",
     "puppeteer": "^19.4.0",
     "qrcode-terminal": "^0.12.0",
