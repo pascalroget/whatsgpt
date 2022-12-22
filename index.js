@@ -13,7 +13,23 @@ import whatsappweb from "whatsapp-web.js";
 const { Client, LocalAuth } = whatsappweb;
 import qrcode from "qrcode-terminal";
 import * as dotenv from "dotenv";
+//import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
+
 dotenv.config();
+
+puppeteer.use(StealthPlugin());
+
+// Create a new browser instance
+const browser = await puppeteer.launch({
+  headless: false,
+  args: [
+    "--no-sandbox",
+    "--disable-setuid-sandbox",
+  ],
+  executablePath: process.env.CHROME_PATH,
+});
 
 // Create whatsapp client instance
 const whatsapp = new Client({
@@ -42,10 +58,14 @@ whatsapp.on("ready", () => {
   console.log("Ready to accept messages");
 });
 
+
+
 async function main() {
   const openAIAuth = await getOpenAIAuth({
     email: process.env.EMAIL,
     password: process.env.PASSWORD,
+    timeoutMs:2 * 60 * 1e3,
+    browser
   });
 
   const chatgpt = new ChatGPTAPI({

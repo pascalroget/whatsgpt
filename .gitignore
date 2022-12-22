@@ -103,3 +103,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Ignore the .env file
+.env
+
+# Ignore data/
+data/
+
+# Ignore .puppeteer
+.puppeteerrc.cjs
