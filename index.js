@@ -7,29 +7,14 @@ PASSWORD=
 
 See documentation for help
 */
-import { ChatGPTAPI, getOpenAIAuth } from "chatgpt";
+import { ChatGPTAPIBrowser } from 'chatgpt'
 import whatsappweb from "whatsapp-web.js";
 
 const { Client, LocalAuth } = whatsappweb;
 import qrcode from "qrcode-terminal";
 import * as dotenv from "dotenv";
-//import puppeteer from "puppeteer";
-import puppeteer from "puppeteer-extra";
-import StealthPlugin from "puppeteer-extra-plugin-stealth";
 
 dotenv.config();
-
-puppeteer.use(StealthPlugin());
-
-// Create a new browser instance
-const browser = await puppeteer.launch({
-  headless: false,
-  args: [
-    "--no-sandbox",
-    "--disable-setuid-sandbox",
-  ],
-  executablePath: process.env.CHROME_PATH,
-});
 
 // Create whatsapp client instance
 const whatsapp = new Client({
@@ -61,18 +46,12 @@ whatsapp.on("ready", () => {
 
 
 async function main() {
-  const openAIAuth = await getOpenAIAuth({
+  const chatgpt = new ChatGPTAPIBrowser({
     email: process.env.EMAIL,
     password: process.env.PASSWORD,
-    timeoutMs:2 * 60 * 1e3,
-    browser
-  });
-
-  const chatgpt = new ChatGPTAPI({
-    ...openAIAuth,
-  });
-
-  await chatgpt.ensureAuth();
+  })
+  
+  await chatgpt.initSession()
 
   whatsapp.on("message", (message) => {
     (async () => {
@@ -98,19 +77,20 @@ async function main() {
       ) {
         console.log(`Creating new conversation for ${message._data.id.remote}`);
         if (message.body === "reset") {
+          
           message.reply("Conversation reset");
           return;
         }
-        conversations[message._data.id.remote] = chatgpt.getConversation();
+        conversations[message._data.id.remote] = chatgpt;
       }
 
       const response = await conversations[message._data.id.remote].sendMessage(
         message.body
       );
 
-      console.log(`Response: ${response}`);
+      console.log(`Response: ${response.response}`);
 
-      message.reply(response);
+      message.reply(response.response);
     })();
   });
 }
