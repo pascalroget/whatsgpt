@@ -1,5 +1,8 @@
 # Notice:
 
+This project isn't maintained anymore as OpenAI has now released mobile apps and an API.
+
+
 OpenAI's ChatGPT is experiencing heavy traffic and at the moment obtaining a session is difficult. You may get these messages while attempting to run the bot. If this happens, try again. Once you get a session, it seems to last quite a while (although it will eventually timeout.)
 
 The ChatGPT NPM module will eventually move to use the official OpenAI API, and I will update this message when that happens.
